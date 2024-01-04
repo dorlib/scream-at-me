@@ -1,0 +1,12 @@
+### Should do something
+
+GET http://localhost:3000/ HTTP/1.1
+
+### Another request
+
+POST http://localhost:3000/speak HTTP/1.1
+Content-Type: application/json
+
+{
+    "text": "dor liberman"
+}
