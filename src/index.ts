@@ -1,5 +1,7 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
+
+const path = require('path');
 const say = require('say')
 
 const app = express();
@@ -23,6 +25,14 @@ app.post('/speak', (req: Request, res: Response) => {
       res.send('Speech generated successfully');
     });
   });
+
+app.get('/', (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '../client/homepage.html'));
+})
+
+app.get('/homepage.css', (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '../client/homepage.css'));
+});
 
 // Start the server
 app.listen(PORT, () => {

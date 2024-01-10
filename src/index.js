@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var express = require("express");
+var path = require('path');
 var say = require('say');
 var app = express();
 var PORT = 3000;
@@ -18,6 +19,12 @@ app.post('/speak', function (req, res) {
         }
         res.send('Speech generated successfully');
     });
+});
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/homepage.html'));
+});
+app.get('/homepage.css', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/homepage.css'));
 });
 // Start the server
 app.listen(PORT, function () {
