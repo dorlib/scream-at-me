@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -6,16 +16,18 @@ ul {
     background-color: #333;
     top: 0;
     width: 100%;
-
   }
   
   li {
     float: left;
+    height: 75px;
   }
   
   li a {
-    display: block;
-    color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #111;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -26,13 +38,13 @@ ul {
     background-color: #111;
   }
 
-  .active {
-    background-color: #04AA6D;
-  }
-
   .form-container {
     text-align: center;
-    margin-top: 1000px; /* Adjust the top margin to position the form lower */
+    margin-top: 50px; /* Adjust the top margin to position the form lower */
+  }
+
+  .active {
+    background-color: #04AA6D;
   }
   
   #textInput {
@@ -51,4 +63,71 @@ ul {
   #speakButton:hover {
     background-color: #45a049; /* Change button hover color */
   }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set the height of the container to the full viewport height */
+    background-color: #f2f2f2; /* Optional background color */
+  }
   
+  
+  #textInput {
+    font-size: 20px; /* Adjust the font size */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #speakButton {
+    font-size: 20px; /* Adjust the font size */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #speakButton:hover {
+    background-color: #45a049;
+  }
+  
+  .navbar {
+    width: 100%;
+    background-color: #333; /* Example navbar background color */
+    color: white;
+    box-sizing: border-box;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .navbar li {
+    float: left;
+  }
+  
+  .navbar li a {
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar li a:hover {
+    background-color: #111;
+  }
+  
+  .form-container {
+    text-align: center;
+  }
+  
+  .welcome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+  }

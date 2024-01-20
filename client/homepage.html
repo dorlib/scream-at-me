@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="homepage.css">
   <meta charset="UTF-8">
   <title>Text to Speech</title>
+  <link rel="stylesheet" href="homepage.css">
 </head>
-<ul>
-  <li><a href="default.asp">Home</a></li>
-  <li><a href="news.asp">News</a></li>
-  <li><a href="contact.asp">Contact</a></li>
-  <li><a href="about.asp">About</a></li>
-</ul>
 
 <body>
-  <input type="text" id="textInput" placeholder="Enter text...">
-  <button id="speakButton">Speak</button>
+  <div class="navbar">
+    <ul class="navbar">
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="news.asp">News</a></li>
+      <li><a href="contact.asp">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li style="float:right"><a class="active" href="Login.asp">Register / Login</a></li>
+    </ul>
+  </div>
+
+  <div class="welcome">
+    <h1>
+      Hi everyone! And welcome to my Scream-At-Me site!
+    </h1>
+    <h2>
+      Here you are more than welcome to send any message you would like and I will here it live on my speakers!
+    </h2>
+  </div>
+  
+  <div class="form-container">
+    <input type="text" id="textInput" placeholder="Enter text...">
+    <button id="speakButton">Speak</button>
+  </div>
 
   <script>
     const speakButton = document.getElementById('speakButton');
@@ -23,7 +38,7 @@
     speakButton.addEventListener('click', () => {
       const text = textInput.value.trim();
       if (text !== '') {
-        fetch('http://localhost:3000/speak', {
+        fetch('https://9185-2a02-6680-1162-bd0-b813-eef2-40b-8084.ngrok-free.app/speak', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
